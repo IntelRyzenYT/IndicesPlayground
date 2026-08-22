@@ -1,0 +1,25 @@
+name: Swift
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: macos-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Select Xcode Version
+      uses: JohnTitor/setup-xcode@v0.1.1
+      with:
+        xcode-version: 'latest-stable'
+
+    - name: Build
+      run: |
+        xcodebuild -scheme "IndicesPlayground" \
+                   -destination "platform=iOS Simulator,name=iPhone 17,OS=26.5" \
+                   build
