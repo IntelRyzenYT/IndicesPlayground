@@ -4,9 +4,13 @@ struct ContentView: View {
     enum PlaygroundTab: Int, Hashable {
         case indexExpansion = 0
         case visualisation = 1
+        case negative = 2
     }
     
     @State var pageIdx = PlaygroundTab.indexExpansion
+    
+    @State var welcome = true
+    
     
     var body: some View {
         NavigationStack {
@@ -22,6 +26,9 @@ struct ContentView: View {
                 
                 .tint(.white)
             }
+        }
+        .sheet(isPresented: $welcome) {
+            WelcomeView()
         }
     }
 }
