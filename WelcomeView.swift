@@ -9,6 +9,11 @@ import SwiftUI
 
 struct WelcomeView: View {
     @Environment(\.dismiss) var dismiss
+    let gradient = LinearGradient(
+                            colors: [.blue, .cyan],
+                            startPoint: .leading,
+                            endPoint: .trailing
+                            )
     var body: some View {
         NavigationStack {
             VStack {
@@ -20,11 +25,7 @@ struct WelcomeView: View {
                             Text("Negative Exponent Visualiser")
                         }
                         Section("Credits") {
-                            Text("Developed with \(Text("∞ aura").foregroundStyle(LinearGradient(
-                            colors: [.blue, .cyan],
-                            startPoint: .leading,
-                            endPoint: .trailing
-                            )) by: Samarth Bhate & Vaibhav Reddy")
+                            Text("Developed with \(Text("∞ aura").foregroundStyle(gradient)) by: Samarth Bhate & Vaibhav Reddy")
                         }
                     }
                     .listRowBackground(Rectangle().foregroundStyle(.quinary))
