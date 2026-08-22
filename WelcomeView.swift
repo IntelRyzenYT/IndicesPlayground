@@ -20,7 +20,11 @@ struct WelcomeView: View {
                             Text("Negative Exponent Visualiser")
                         }
                         Section("Credits") {
-                            Text("Developed with \(Text("∞ aura").foregroundStyle(.blue)) by: Samarth Bhate & Vaibhav Reddy")
+                            Text("Developed with \(Text("∞ aura").foregroundStyle(LinearGradient(
+                            colors: [.blue, .cyan],
+                            startPoint: .leading,
+                            endPoint: .trailing
+                            )) by: Samarth Bhate & Vaibhav Reddy")
                         }
                     }
                     .listRowBackground(Rectangle().foregroundStyle(.quinary))
