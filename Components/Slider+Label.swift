@@ -1,5 +1,5 @@
 //
-//  SegmentedPicker+Label.swift
+//  Slider+Label.swift
 //  IndicesPlayground
 //
 //  Created by Samarth Bhate on 8/21/26.

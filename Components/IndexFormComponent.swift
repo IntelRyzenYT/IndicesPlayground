@@ -1,5 +1,5 @@
 //
-//  SegmentedPicker+Label.swift
+//  IndexFormComponent.swift
 //  IndicesPlayground
 //
 //  Created by Samarth Bhate on 8/21/26.
