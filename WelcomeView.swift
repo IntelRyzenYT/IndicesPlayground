@@ -44,6 +44,7 @@ struct WelcomeView: View {
             }
             .navigationTitle("Welcome!")
         }
+        .presentationBackground(.background)
         
     }
 }
