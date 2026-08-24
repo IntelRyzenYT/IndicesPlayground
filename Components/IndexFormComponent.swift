@@ -36,25 +36,26 @@ struct IndexFormComponent: View {
     }
     
     var body: some View {
-        ZStack {
-            Text(omittingBase ? "x" : base.formatted())
-                .font(.system(size: 84))
-                .fontDesign(.rounded)
-                .frame(maxWidth: .infinity)
-                .overlay(alignment: .topTrailing) {
-                    if exp != 1 {
-                        Text(omittingExp ? "y" : exp.formatted())
-                            .font(.system(size: 64))
-                            .fontDesign(.rounded)
-                            .frame(maxWidth: .infinity)
-                            .offset(
-                                x: (exp == 10 ? 64 : 50) + (base >= 10 ? 10 : 0),
-                                y: -40
-                            )
-                    }
+            ZStack {
+                Text(omittingBase ? "x" : (base.sign == .minus && base == 0.0 ? abs(base).formatted() : base.formatted()))
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .font(.system(size: 84, design: .rounded))
+                    .bold()
+                
+                if exp != 1 {
+                    Text(omittingExp ? "y" : exp.formatted())
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                        .font(.system(size: 64, design: .rounded))
+                        .bold()
+                        .offset(
+                            x: (exp >= 10 || exp <= -1 ? 64 : 50) + (base >= 10 ? 10 : 0),
+                            y: -30
+                        )
                 }
+            }
+        
+            
         }
-    }
 }
 
 #Preview {

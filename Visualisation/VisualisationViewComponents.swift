@@ -9,14 +9,14 @@ import SwiftUI
 
 extension VisualisationView {
     var controlsArea: some View {
-        VStack {
+        ScrollView {
             if vm.visMode == 0 {
                 baseSlider
             }
             modeSelector
             visModeSelector
         }
-        .frame(maxWidth: 500, maxHeight: .infinity)
+        .frame(maxWidth: 500, maxHeight: 300)
         .roundedUltraThinBackground()
     }
     var baseSlider: some View {
@@ -56,7 +56,7 @@ extension VisualisationView {
                 .bold()
                 .padding()
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .frame(maxWidth: .infinity, maxHeight: 300)
         .roundedUltraThinBackground()
     }
     
@@ -70,13 +70,12 @@ extension VisualisationView {
                 .bold()
                 .padding()
         }
-        .frame(maxWidth: .infinity, maxHeight: 400)
+        .frame(maxWidth: .infinity, maxHeight: 200)
         .roundedUltraThinBackground()
     }
     
     var cubeVisual: some View {
         VStack {
-            Spacer(minLength: 100)
             CubeVisualComponent(length: Int(vm.base))
                 .frame(width: 300)
                 .padding()
@@ -85,7 +84,7 @@ extension VisualisationView {
                 .bold()
                 .padding()
         }
-        .frame(maxWidth: .infinity, maxHeight: 400)
+        .frame(maxWidth: .infinity, maxHeight: 200)
         .roundedUltraThinBackground()
     }
     

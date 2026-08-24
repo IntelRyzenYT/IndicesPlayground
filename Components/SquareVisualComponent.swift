@@ -10,7 +10,6 @@ import SwiftUI
 struct SquareVisualComponent: View {
     let size: Int
     
-    // 1. Use .flexible() so the grid divides the available space evenly
     var columns: [GridItem] {
         Array(repeating: GridItem(.flexible(), spacing: 1), count: size)
     }
