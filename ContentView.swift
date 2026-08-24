@@ -5,12 +5,10 @@ struct ContentView: View {
         case indexExpansion = 0
         case visualisation = 1
         case negative = 2
+        
     }
     
     @State var pageIdx = PlaygroundTab.indexExpansion
-    
-    @State var welcome = true
-    
     
     var body: some View {
         NavigationStack {
@@ -22,16 +20,17 @@ struct ContentView: View {
                     Tab("Visualisation", image: "", value: .visualisation) {
                         VisualisationView()
                     }
+                    Tab("Negative Visual", image: "", value: .negative) {
+                         NegativeVisualisationView()
+                    }
                 }
                 
                 .tint(.white)
             }
         }
-        .sheet(isPresented: $welcome) {
-            WelcomeView()
-        }
     }
 }
+
 
 #Preview(traits: .landscapeLeft) {
     ContentView()
