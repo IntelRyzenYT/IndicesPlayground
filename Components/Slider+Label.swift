@@ -11,10 +11,16 @@ struct SliderLabel<Value: BinaryFloatingPoint>: View where Value.Stride: BinaryF
     let range: ClosedRange<Value>
     let label: String
     @Binding var value: Value
-    init(range: ClosedRange<Value>, label: String, value: Binding<Value>) {
+    
+    @Environment(\.self) var env
+    
+    let tint: Color
+    
+    init(range: ClosedRange<Value>, label: String, value: Binding<Value>, tint: Color = .indigo) {
         self.range = range
         self._value = value
         self.label = label
+        self.tint = tint
     }
     var body: some View {
         HStack {
@@ -34,7 +40,7 @@ struct SliderLabel<Value: BinaryFloatingPoint>: View where Value.Stride: BinaryF
                         .bold()
                         .offset(y: -20)
                 }
-                .tint(.indigo)
+                .tint(tint)
         }
        
     }

@@ -30,8 +30,9 @@ extension IndexExpansionView {
                 .bold()
                 .padding()
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .frame(maxWidth: 500, maxHeight: .infinity)
         .roundedUltraThinBackground()
+        
     }
     
     var expandedFormArea: some View {
@@ -48,7 +49,7 @@ extension IndexExpansionView {
                 .bold()
                 .padding()
         }
-        .frame(maxWidth: .infinity, maxHeight: 400)
+        .frame(maxWidth: .infinity, maxHeight: 200)
         .roundedUltraThinBackground()
     }
 }

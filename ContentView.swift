@@ -16,12 +16,15 @@ struct ContentView: View {
                 TabView(selection: $pageIdx) {
                     Tab("Index Expansion", image: "", value: .indexExpansion) {
                         IndexExpansionView()
+                            
                     }
                     Tab("Visualisation", image: "", value: .visualisation) {
                         VisualisationView()
+                            
                     }
                     Tab("Negative Visual", image: "", value: .negative) {
                          NegativeVisualisationView()
+                            
                     }
                 }
                 
